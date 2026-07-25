@@ -1,0 +1,9 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1784983828
+icon.svg::CompressedTexture2D::349534904581515419::1784888189::1784983828::1::::<><><>0<>0<>5dd1a8beba10b3b05224351da5bc5918<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+intro.gd::GDScript::532635841489605071::1784888367::0::1::::<>Control<><>0<>0<><>::
+intro.tscn::PackedScene::8361683505745858858::1784888690::0::1::::<><><>0<>0<><>::uid://huao1jg8lxh4::::res://intro.gd<>uid://dvj42gsc47uuq::::res://starfield.gd<>uid://bwqk5funj3e68::::res://shaders/vignette.gdshader<>uid://dsr2w5qpreukx::::res://shaders/scanlines.gdshader
+starfield.gd::GDScript::8653616519567667352::1784888384::0::1::::<>Node2D<><>0<>0<><>::
+::res://shaders/::1784888274
+scanlines.gdshader::Shader::8459435905775309259::1784888189::0::1::::<><><>0<>0<><>::
+vignette.gdshader::Shader::3964266325656214239::1784888189::0::1::::<><><>0<>0<><>::
