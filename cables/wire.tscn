@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dp2jnmqq0ns75"]
+
+[ext_resource type="Script" uid="uid://cr17mfsqg81xi" path="res://cables/wire.gd" id="1_7on36"]
+[ext_resource type="Texture2D" uid="uid://bia634c3cx5u5" path="res://cables/wire.png" id="2_x61ks"]
+
+[node name="Wire" type="Node2D" unique_id=1415871856]
+script = ExtResource("1_7on36")
+texture = ExtResource("2_x61ks")

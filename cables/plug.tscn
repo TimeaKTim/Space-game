@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c8ikv78xfmsew"]
+
+[ext_resource type="Script" uid="uid://5v0w0yquec2s" path="res://cables/plug.gd" id="1_27j0f"]
+[ext_resource type="Texture2D" uid="uid://ogk42caw2trw" path="res://cables/outlet.png" id="1_ealsu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdwxb"]
+radius = 128.0
+
+[node name="Node2D" type="Node2D" unique_id=342343756]
+script = ExtResource("1_27j0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1452337130]
+texture = ExtResource("1_ealsu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1352666810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1542723182]
+shape = SubResource("CircleShape2D_cdwxb")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
