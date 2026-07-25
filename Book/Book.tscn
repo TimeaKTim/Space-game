@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://53yb5stsbq3o"]
 
 [ext_resource type="Texture2D" uid="uid://cxqfo26r43br7" path="res://Book/book.png" id="1_cuk7m"]
+[ext_resource type="Script" uid="uid://8qysp5bpyxc5" path="res://Book/rich_text_label.gd" id="2_asd57"]
 
 [node name="Node2D" type="Node2D" unique_id=1060913744]
 
@@ -8,3 +9,29 @@
 position = Vector2(645, 357)
 scale = Vector2(0.6625, 0.6537037)
 texture = ExtResource("1_cuk7m")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=169922343]
+offset_left = 688.0
+offset_top = 70.0
+offset_right = 1038.0
+offset_bottom = 609.0
+theme_override_colors/default_color = Color(0.44313726, 0.21960784, 0.5176471, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Helllo World "
+fit_content = true
+script = ExtResource("2_asd57")
+secret_message = "We found it drifting in the cold void. A living, self-replicating organism that defied all logic, surviving effortlessly in the absolute vacuum of space. We brought a specimen aboard, believing we had made the greatest scientific discovery of our age."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=348014333]
+offset_left = 82.0
+offset_top = 71.0
+offset_right = 432.0
+offset_bottom = 610.0
+theme_override_colors/default_color = Color(0.44313726, 0.21960784, 0.5176471, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Helllo World "
+fit_content = true
+script = ExtResource("2_asd57")
+secret_message = "We thought our understanding of life was absolute. Our vessels, marvels of engineering woven with living biological components, allowed us to navigate the stars with unparalleled grace. But the cosmos harbors horrors we could never have anticipated."
