@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b5n6nqk7ep5ve"]
+
+[ext_resource type="Script" uid="uid://emwtnnsqy0cm" path="res://Lifesupport/potion.gd" id="1_174ht"]
+[ext_resource type="Texture2D" uid="uid://q4b1jkltfp4p" path="res://Lifesupport/Untitled3.png" id="2_bbwj3"]
+[ext_resource type="Texture2D" uid="uid://dage5qpswdi1k" path="res://Lifesupport/Untitled2.png" id="3_gqxm8"]
+[ext_resource type="Texture2D" uid="uid://crtuu3tntuvw1" path="res://Lifesupport/Untitled1.png" id="4_a0gnx"]
+[ext_resource type="Texture2D" uid="uid://dldajocdhidqi" path="res://Lifesupport/belt.png" id="5_gqxm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flgdm"]
+size = Vector2(558, 751)
+
+[node name="Potion" type="Node2D" unique_id=284708003]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_174ht")
+
+[node name="Sutyok" type="Sprite2D" parent="." unique_id=848644522]
+texture = ExtResource("2_bbwj3")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1979524937]
+texture = ExtResource("3_gqxm8")
+
+[node name="Cap" type="Sprite2D" parent="." unique_id=1688672314]
+texture = ExtResource("4_a0gnx")
+
+[node name="Belt" type="Sprite2D" parent="." unique_id=250557315]
+position = Vector2(-1.9073485e-05, 0)
+scale = Vector2(0.9999997, 0.9999997)
+texture = ExtResource("5_gqxm8")
+
+[node name="Button" type="Button" parent="." unique_id=90932747]
+offset_left = -254.99997
+offset_top = -352.99997
+offset_right = 301.00003
+offset_bottom = 392.00003
+flat = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1091907122]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1582666421]
+position = Vector2(19, 14.5)
+shape = SubResource("RectangleShape2D_flgdm")
