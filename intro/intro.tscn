@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://drepx81e1my7k"]
+
+[ext_resource type="Script" uid="uid://huao1jg8lxh4" path="res://intro/intro.gd" id="1_s2ta7"]
+[ext_resource type="Script" uid="uid://dvj42gsc47uuq" path="res://intro/starfield.gd" id="2_star"]
+[ext_resource type="Shader" uid="uid://bwqk5funj3e68" path="res://intro/shaders/vignette.gdshader" id="3_vig"]
+[ext_resource type="Shader" uid="uid://dsr2w5qpreukx" path="res://intro/shaders/scanlines.gdshader" id="4_scan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
+shader = ExtResource("3_vig")
+shader_parameter/strength = 0.55
+shader_parameter/radius = 0.85
+shader_parameter/softness = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scan"]
+shader = ExtResource("4_scan")
+shader_parameter/line_spacing = 3.0
+shader_parameter/opacity = 0.07
+
+[node name="Intro" type="Control" unique_id=1424655253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2ta7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=974861996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.02, 0.035, 1)
+
+[node name="Starfield" type="Node2D" parent="." unique_id=974861997]
+script = ExtResource("2_star")
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=974861998]
+material = SubResource("ShaderMaterial_vig")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="." unique_id=1655970141]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 36.0
+offset_right = 260.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72, 0.88, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.3, 0.7, 1, 0.45)
+theme_override_colors/font_outline_color = Color(0.15, 0.55, 0.95, 0.35)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 38
+text = "SALVAGE CONTRACT 2638"
+horizontal_alignment = 1
+
+[node name="Divider" type="ColorRect" parent="." unique_id=974861999]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 96.0
+offset_right = 90.0
+offset_bottom = 98.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.55, 0.75, 1, 0.35)
+
+[node name="Story" type="RichTextLabel" parent="." unique_id=1429762311]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 78.0
+offset_top = 116.0
+offset_right = -594.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_constants/line_separation = 6
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "For decades, abandoned alien vessels have
+drifted through explored space.
+
+No one knows who built them.
+No one knows why they were abandoned.
+
+Entire industries now exist to recover their technology.
+
+You are not a soldier.
+You are a salvager.
+
+Your assignment is simple:
+• Board the vessel.
+• Recover what you can.
+• Leave.
+
+Failure is acceptable.
+Loss of recovered technology is not."
+fit_content = true
+scroll_active = false
+
+[node name="PageDots" type="HBoxContainer" parent="." unique_id=974862000]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -46.0
+offset_right = 20.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ContinueLabel" type="Label" parent="." unique_id=859281120]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -93.5
+offset_top = -23.0
+offset_right = 93.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.75, 0.85, 0.95, 1)
+theme_override_font_sizes/font_size = 12
+text = "Press SPACE to continue"
+horizontal_alignment = 1
+
+[node name="SkipLabel" type="Label" parent="." unique_id=974862001]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -34.0
+offset_right = -20.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 0.6)
+theme_override_font_sizes/font_size = 11
+text = "ESC — skip intro"
+horizontal_alignment = 2
+
+[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=974862002]
+material = SubResource("ShaderMaterial_scan")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=144450602]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
