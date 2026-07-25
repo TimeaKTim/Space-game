@@ -48,5 +48,5 @@ func _draw_wave(cycles: float, color: Color, line_width: float) -> void:
 
 func _draw() -> void:
 	draw_line(Vector2(0, size.y / 2.0), Vector2(size.x, size.y / 2.0), axis_color, 1.0)
-	_draw_wave(_value_to_cycles(target_value), target_color, 2.0)
+	#_draw_wave(_value_to_cycles(target_value), target_color, 2.0)
 	_draw_wave(_value_to_cycles(current_value), current_color, 3.0)
