@@ -1,29 +1,242 @@
 [gd_scene format=3 uid="uid://8hm3315garvm"]
 
 [ext_resource type="Script" uid="uid://ba6d0ltb3e8m1" path="res://cables/cables.gd" id="1_46ll2"]
-[ext_resource type="Texture2D" uid="uid://ddy6hki72yw5i" path="res://cables/background.png" id="2_2u27p"]
-[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="3_cgop3"]
+[ext_resource type="Texture2D" uid="uid://ddy6hki72yw5i" path="res://cables/assets/background.png" id="2_2u27p"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="3_56ejk"]
+[ext_resource type="PackedScene" uid="uid://c8ikv78xfmsew" path="res://cables/plug.tscn" id="3_cgop3"]
+[ext_resource type="Texture2D" uid="uid://q3hacmet7yol" path="res://cables/assets/outlet.tres" id="4_0am7c"]
+[ext_resource type="Texture2D" uid="uid://c1jvuoiul4d0m" path="res://cables/assets/inlet.tres" id="5_56ejk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46ll2"]
-size = Vector2(0, 0)
+size = Vector2(1280, 720)
 
 [node name="Cables" type="Node2D" unique_id=1036050797]
 script = ExtResource("1_46ll2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1308535167]
+position = Vector2(640, 360)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=821493997]
 shape = SubResource("RectangleShape2D_46ll2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015915515]
+[node name="Background" type="Sprite2D" parent="." unique_id=2015915515]
 scale = Vector2(0.444, 0.444)
 texture = ExtResource("2_2u27p")
 centered = false
 
-[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("3_cgop3")]
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 93.0
-offset_bottom = 67.0
+[node name="Back button2" parent="." unique_id=501703621 instance=ExtResource("3_56ejk")]
+
+[node name="Plug1" parent="." unique_id=1452337130 instance=ExtResource("3_cgop3")]
+position = Vector2(209.99998, 295)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug2" parent="." unique_id=1498134789 instance=ExtResource("3_cgop3")]
+position = Vector2(210.00002, 357.00003)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug3" parent="." unique_id=1678770432 instance=ExtResource("3_cgop3")]
+position = Vector2(211, 416)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug4" parent="." unique_id=630039120 instance=ExtResource("3_cgop3")]
+position = Vector2(395, 212.00005)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug5" parent="." unique_id=304553069 instance=ExtResource("3_cgop3")]
+position = Vector2(452.00003, 213)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug6" parent="." unique_id=80053961 instance=ExtResource("3_cgop3")]
+position = Vector2(509.00003, 215)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug7" parent="." unique_id=385409035 instance=ExtResource("3_cgop3")]
+position = Vector2(568, 216.00002)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug8" parent="." unique_id=510352811 instance=ExtResource("3_cgop3")]
+position = Vector2(636, 379)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug9" parent="." unique_id=993926827 instance=ExtResource("3_cgop3")]
+position = Vector2(1081, 231.00002)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug10" parent="." unique_id=2104052861 instance=ExtResource("3_cgop3")]
+position = Vector2(1081, 286)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug11" parent="." unique_id=1989119850 instance=ExtResource("3_cgop3")]
+position = Vector2(1081, 343.00003)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug12" parent="." unique_id=622744557 instance=ExtResource("3_cgop3")]
+position = Vector2(1082, 398)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug13" parent="." unique_id=764135287 instance=ExtResource("3_cgop3")]
+position = Vector2(1085, 452)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug14" parent="." unique_id=1043019147 instance=ExtResource("3_cgop3")]
+position = Vector2(1083.0001, 506)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug15" parent="." unique_id=1153405303 instance=ExtResource("3_cgop3")]
+position = Vector2(1084.0001, 558)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug16" parent="." unique_id=1223503276 instance=ExtResource("3_cgop3")]
+position = Vector2(898.0001, 539.00006)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug17" parent="." unique_id=792096807 instance=ExtResource("3_cgop3")]
+position = Vector2(897, 602)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug18" parent="." unique_id=1789041427 instance=ExtResource("3_cgop3")]
+position = Vector2(391.0001, 683)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug19" parent="." unique_id=251288321 instance=ExtResource("3_cgop3")]
+position = Vector2(327, 683)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug20" parent="." unique_id=1836591713 instance=ExtResource("3_cgop3")]
+position = Vector2(265, 680)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug21" parent="." unique_id=302048439 instance=ExtResource("3_cgop3")]
+position = Vector2(204.00003, 678.00006)
+scale = Vector2(0.1769319, 0.1769319)
+texture = ExtResource("4_0am7c")
+
+[node name="Plug22" parent="." unique_id=991753626 instance=ExtResource("3_cgop3")]
+position = Vector2(495.8, 544.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug23" parent="." unique_id=307548301 instance=ExtResource("3_cgop3")]
+position = Vector2(495.8, 577.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug24" parent="." unique_id=1961351739 instance=ExtResource("3_cgop3")]
+position = Vector2(495.8, 614.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug25" parent="." unique_id=549388470 instance=ExtResource("3_cgop3")]
+position = Vector2(391.8, 544.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug26" parent="." unique_id=705845229 instance=ExtResource("3_cgop3")]
+position = Vector2(391.8, 577.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug27" parent="." unique_id=1619613969 instance=ExtResource("3_cgop3")]
+position = Vector2(391.8, 614.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug28" parent="." unique_id=1518729863 instance=ExtResource("3_cgop3")]
+position = Vector2(1022, 363)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug29" parent="." unique_id=548159555 instance=ExtResource("3_cgop3")]
+position = Vector2(1022, 404)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug30" parent="." unique_id=1575188783 instance=ExtResource("3_cgop3")]
+position = Vector2(1022, 437)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug31" parent="." unique_id=836239897 instance=ExtResource("3_cgop3")]
+position = Vector2(900, 363)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug32" parent="." unique_id=159857620 instance=ExtResource("3_cgop3")]
+position = Vector2(900, 405)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug33" parent="." unique_id=1112893946 instance=ExtResource("3_cgop3")]
+position = Vector2(900, 436)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug34" parent="." unique_id=468989686 instance=ExtResource("3_cgop3")]
+position = Vector2(785, 94)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug35" parent="." unique_id=647990605 instance=ExtResource("3_cgop3")]
+position = Vector2(785, 135)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug36" parent="." unique_id=693860428 instance=ExtResource("3_cgop3")]
+position = Vector2(778, 172)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug37" parent="." unique_id=256047991 instance=ExtResource("3_cgop3")]
+position = Vector2(654.8, 95.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug38" parent="." unique_id=600204693 instance=ExtResource("3_cgop3")]
+position = Vector2(654.8, 135.8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
+
+[node name="Plug39" parent="." unique_id=670881037 instance=ExtResource("3_cgop3")]
+position = Vector2(663, 173)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_56ejk")
+type = 1
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

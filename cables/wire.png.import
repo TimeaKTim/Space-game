@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1osh6b64ld3v"
-path="res://.godot/imported/inlet.png-549cab5c5edebee08fea3f221b1c70f2.ctex"
+uid="uid://itnof2um4qgq"
+path="res://.godot/imported/wire.png-aa0a0dde6e630a1263b8926fd435979a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cables/inlet.png"
-dest_files=["res://.godot/imported/inlet.png-549cab5c5edebee08fea3f221b1c70f2.ctex"]
+source_file="res://cables/wire.png"
+dest_files=["res://.godot/imported/wire.png-aa0a0dde6e630a1263b8926fd435979a.ctex"]
 
 [params]
 
