@@ -8,6 +8,12 @@ var screen_size: Vector2
 var target_rotation: float = 0.0
 var indicator_speed: float = 2.0 
 
+# --- Win condition: shoot down enough asteroids ---
+const ASTEROIDS_TO_WIN := 20
+const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+var asteroids_destroyed: int = 0
+var run_complete: bool = false
+
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	print("----- DEBUG START -----")
@@ -39,7 +45,21 @@ func _on_spawn_timer_timeout() -> void:
 		var random_x = randf_range(20, screen_size.x - 20)
 		asteroid.global_position = Vector2(random_x, 0)
 		
+		asteroid.shot_down.connect(_on_asteroid_shot_down)
+		
 		add_child(asteroid)
 		print("MAIN: Asteroid spawned successfully at: ", asteroid.global_position)
 	else:
 		print("ERROR: Timer ticked, but cannot spawn because asteroid_scene is null.")
+
+func _on_asteroid_shot_down() -> void:
+	if run_complete:
+		return
+	
+	asteroids_destroyed += 1
+	print("MAIN: Asteroids destroyed: ", asteroids_destroyed, "/", ASTEROIDS_TO_WIN)
+	
+	if asteroids_destroyed == ASTEROIDS_TO_WIN:
+		run_complete = true
+		$SpawnTimer.stop()
+		get_tree().change_scene_to_file(NEXT_SCENE_PATH)

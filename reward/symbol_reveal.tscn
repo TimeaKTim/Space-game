@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b1nsm0id86p78" path="res://reward/starfield.gd" id="2_star"]
 [ext_resource type="Shader" uid="uid://cjwqnq8d1w6cl" path="res://reward/shaders/vignette.gdshader" id="3_vig"]
 [ext_resource type="Shader" uid="uid://cnm7uerccs2ph" path="res://reward/shaders/scanlines.gdshader" id="4_scan"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="5_uuegw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
 shader = ExtResource("3_vig")
@@ -16,7 +17,7 @@ shader = ExtResource("4_scan")
 shader_parameter/line_spacing = 3.0
 shader_parameter/opacity = 0.07
 
-[node name="SymbolReveal" type="Control" unique_id=1859011691]
+[node name="SymbolReveal" type="Control" unique_id=677298501]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sym")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1471826590]
+[node name="Background" type="ColorRect" parent="." unique_id=2004010567]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,10 +35,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.015, 0.02, 0.035, 1)
 
-[node name="Starfield" type="Node2D" parent="." unique_id=1416305527]
+[node name="Starfield" type="Node2D" parent="." unique_id=1730227040]
 script = ExtResource("2_star")
 
-[node name="Vignette" type="ColorRect" parent="." unique_id=925053278]
+[node name="Vignette" type="ColorRect" parent="." unique_id=1548189213]
 material = SubResource("ShaderMaterial_vig")
 layout_mode = 1
 anchors_preset = 15
@@ -47,7 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SymbolsColumn" type="VBoxContainer" parent="." unique_id=1735535630]
+[node name="SymbolsColumn" type="VBoxContainer" parent="." unique_id=585471348]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,43 +64,43 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Symbol1" type="RichTextLabel" parent="SymbolsColumn" unique_id=66828652]
+[node name="Symbol1" type="RichTextLabel" parent="SymbolsColumn" unique_id=35923329]
 custom_minimum_size = Vector2(520, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "?"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Symbol2" type="RichTextLabel" parent="SymbolsColumn" unique_id=1755619225]
+[node name="Symbol2" type="RichTextLabel" parent="SymbolsColumn" unique_id=1171981872]
 custom_minimum_size = Vector2(520, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "?"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Symbol3" type="RichTextLabel" parent="SymbolsColumn" unique_id=1218893543]
+[node name="Symbol3" type="RichTextLabel" parent="SymbolsColumn" unique_id=1657617812]
 custom_minimum_size = Vector2(520, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
 text = "?"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=733995930]
+[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=408979918]
 material = SubResource("ShaderMaterial_scan")
 layout_mode = 1
 anchors_preset = 15
@@ -109,7 +110,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="FadeRect" type="ColorRect" parent="." unique_id=1380294146]
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1666417377]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,3 +119,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("5_uuegw")]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 87.0
+offset_bottom = 55.0
+metadata/_edit_use_anchors_ = true

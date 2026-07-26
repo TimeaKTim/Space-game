@@ -1,5 +1,7 @@
 extends Area2D
 
+signal shot_down
+
 @export var speed: float = 250.0
 @export var explosion_scene: PackedScene 
 
@@ -20,6 +22,7 @@ func _on_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("laser") or area.is_in_group("Laser"):
 		area.queue_free() 
 		explode()         
+		shot_down.emit()
 
 func explode() -> void:
 	if explosion_scene:

@@ -36,7 +36,7 @@ const COLOR_COOLANT_HELD := Color(0.4, 0.85, 1.0, 0.4)
 const COLOR_FUEL_IDLE := Color(0.95, 0.6, 0.25, 0.12)
 const COLOR_FUEL_HELD := Color(0.95, 0.6, 0.25, 0.4)
 
-const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+const NEXT_SCENE_PATH := "res://outro/outro.tscn"
 const WIN_TRANSITION_DELAY := 1.4
 
 enum State { PLAYING, WON, LOST }
