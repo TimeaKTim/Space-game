@@ -27,11 +27,10 @@ func end_selection() -> void:
 	
 	if from not in objective or objective[from] != to:
 		wires[from].clear()
-		
-		print("zap")
 		var zap_effect: Zap = zap_scene.instantiate()
 		zap_effect.emitting = true
-		plugs[to].add_child(zap_effect)
+		zap_effect.position = plugs[to].position
+		add_child(zap_effect)
 	
 	from = -1
 	to = -1
