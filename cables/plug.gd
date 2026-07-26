@@ -1,8 +1,10 @@
 class_name Plug
 extends Sprite2D
 
-@onready var texture_outlet: Texture2D = load('res://cables/outlet.png')
-@onready var texture_inlet: Texture2D = load('res://cables/inlet.png')
+@export var texture_outlet: Texture2D
+@export var texture_outlet_highlighted: Texture2D
+@export var texture_inlet: Texture2D
+@export var texture_inlet_highlighted: Texture2D
 
 enum PlugType { Inlet = 1, Outlet = 2 }
 
@@ -12,10 +14,17 @@ enum PlugType { Inlet = 1, Outlet = 2 }
 		__assign_texture()
 		__assign_radius()
 
+@export var highlighted: bool = false:
+	set(value):
+		highlighted = value
+		__assign_texture()
+
 @export var radius: int
 
 func __assign_texture() -> void:
 	match type:
+		PlugType.Inlet when highlighted: texture = texture_inlet_highlighted
+		PlugType.Outlet when highlighted: texture = texture_outlet_highlighted
 		PlugType.Inlet: texture = texture_inlet
 		PlugType.Outlet: texture = texture_outlet
 

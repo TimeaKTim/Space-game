@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://c8ikv78xfmsew"]
 
 [ext_resource type="Script" uid="uid://5v0w0yquec2s" path="res://cables/plug.gd" id="1_27j0f"]
-[ext_resource type="Texture2D" uid="uid://ogk42caw2trw" path="res://cables/outlet.png" id="1_ealsu"]
+[ext_resource type="Texture2D" uid="uid://cfxdva1ok1ha3" path="res://cables/assets/inlet_high.tres" id="3_gb1f1"]
+[ext_resource type="Texture2D" uid="uid://q3hacmet7yol" path="res://cables/assets/outlet.tres" id="3_i8ppf"]
+[ext_resource type="Texture2D" uid="uid://c1jvuoiul4d0m" path="res://cables/assets/inlet.tres" id="4_gb1f1"]
+[ext_resource type="Texture2D" uid="uid://bjabph6ncnjwo" path="res://cables/assets/outlet_high.tres" id="5_vcnte"]
 
 [node name="Plug" type="Sprite2D" unique_id=1452337130]
-texture = ExtResource("1_ealsu")
 script = ExtResource("1_27j0f")
+texture_outlet = ExtResource("3_i8ppf")
+texture_outlet_highlighted = ExtResource("5_vcnte")
+texture_inlet = ExtResource("4_gb1f1")
+texture_inlet_highlighted = ExtResource("3_gb1f1")

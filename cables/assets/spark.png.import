@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ogk42caw2trw"
-path="res://.godot/imported/outlet.png-2a75078bf3d294540b6203f545856dc7.ctex"
+uid="uid://brlnh6d8ugxho"
+path="res://.godot/imported/spark.png-41252defea8b8a7964b79a74cb864d6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cables/outlet.png"
-dest_files=["res://.godot/imported/outlet.png-2a75078bf3d294540b6203f545856dc7.ctex"]
+source_file="res://cables/assets/spark.png"
+dest_files=["res://.godot/imported/spark.png-41252defea8b8a7964b79a74cb864d6c.ctex"]
 
 [params]
 

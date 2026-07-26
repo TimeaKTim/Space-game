@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cfxdva1ok1ha3"]
+
+[ext_resource type="Texture2D" uid="uid://p6d7bdrfc4xf" path="res://cables/assets/atlas.png" id="1_sokel"]
+
+[resource]
+atlas = ExtResource("1_sokel")
+region = Rect2(559, 193, 259, 269)

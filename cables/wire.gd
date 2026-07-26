@@ -21,7 +21,23 @@ extends Node2D
 		to = value
 		queue_redraw()
 
-func init(pos: Vector2):
+@onready var _blinking_tween: Tween
+@export var blinking: bool = false:
+	set(value):
+		if value == blinking:
+			return
+		blinking = value
+		if not blinking and _blinking_tween:
+			_blinking_tween.kill()
+			_blinking_tween = null
+			_opacity = 1.
+			queue_redraw()
+		if blinking:
+			_blinking_tween = create_tween().set_loops()
+			_blinking_tween.tween_property(self, ^"_opacity", .5, .2)
+			_blinking_tween.tween_property(self, ^"_opacity", 1., .2)
+
+func init(pos: Vector2) -> void:
 	from = pos
 	to = pos
 
@@ -29,9 +45,17 @@ func clear() -> void:
 	self.from = Vector2.ZERO
 	self.to = Vector2.ZERO
 
+var _opacity := 1.0
+
+func _process(_dt: float) -> void:
+	if blinking:
+		queue_redraw()
+
 func _draw() -> void:
 	if texture == null or from == null or to == null:
 		return
+	
+	var modulate = Color(Color.WHITE, _opacity)
 	
 	# segment size with texture fallback
 	var seg_size: Vector2
@@ -59,10 +83,10 @@ func _draw() -> void:
 		
 		if i < whole_segments:
 			# draw whole segments
-			draw_texture_rect(texture, rect, false)
+			draw_texture_rect(texture, rect, false, modulate)
 		else:
 			# draw remainder segment
 			var src := Rect2(Vector2.ZERO, seg_size)
 			src.size.x *= remainder
 			rect.size.x *= remainder
-			draw_texture_rect_region(texture, rect, src)
+			draw_texture_rect_region(texture, rect, src, modulate)
