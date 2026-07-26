@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b8lkfgue685bv"]
+
+[ext_resource type="Script" uid="uid://d1ux5y5y57t71" path="res://NAVigation/laser.gd" id="1_fslxk"]
+[ext_resource type="Texture2D" uid="uid://b1rj84331aujw" path="res://NAVigation/Untitled 9.png" id="1_rr08o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rr08o"]
+radius = 86.0
+height = 312.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fslxk"]
+atlas = ExtResource("1_rr08o")
+region = Rect2(152.77911, 885.9576, 262.0276, 337.97748)
+
+[node name="Area2D" type="Area2D" unique_id=1395484295 groups=["laser"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_fslxk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2046369408]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=942430498]
+shape = SubResource("CapsuleShape2D_rr08o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2042683018]
+rotation = 0.2447044
+scale = Vector2(1.0120482, 1.0112995)
+texture = SubResource("AtlasTexture_fslxk")
+offset = Vector2(-13.900024, 1.4351391)

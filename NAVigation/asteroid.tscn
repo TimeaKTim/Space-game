@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bsf36j8ma3i8b"]
+
+[ext_resource type="Script" uid="uid://cjfvucqhpvvod" path="res://NAVigation/asteroid.gd" id="1_8pdwb"]
+[ext_resource type="Texture2D" uid="uid://b1rj84331aujw" path="res://NAVigation/Untitled 9.png" id="1_yqarj"]
+[ext_resource type="PackedScene" uid="uid://cf7ug2j8oh5ws" path="res://NAVigation/Explosion.tscn" id="2_fj7dr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8pdwb"]
+radius = 181.70581
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj7dr"]
+atlas = ExtResource("1_yqarj")
+region = Rect2(748.051, 636.50757, 421.17737, 441.89038)
+
+[node name="Area2D" type="Area2D" unique_id=496083264 groups=["asteroid"]]
+position = Vector2(0, -4)
+script = ExtResource("1_8pdwb")
+explosion_scene = ExtResource("2_fj7dr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309961922]
+position = Vector2(-6, -2)
+shape = SubResource("CircleShape2D_8pdwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1357482414]
+texture = SubResource("AtlasTexture_fj7dr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1806691320]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

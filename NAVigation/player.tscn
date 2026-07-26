@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ci6uhjqsddd1a"]
+
+[ext_resource type="Script" uid="uid://dqrdlujtthxvy" path="res://NAVigation/player.gd" id="1_nfl0w"]
+[ext_resource type="PackedScene" uid="uid://b8lkfgue685bv" path="res://NAVigation/laser.tscn" id="2_b3rne"]
+[ext_resource type="Texture2D" uid="uid://b1rj84331aujw" path="res://NAVigation/Untitled 9.png" id="2_qbx2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3rne"]
+atlas = ExtResource("2_qbx2q")
+region = Rect2(1159.7466, 732.15, 1000.2534, 887.85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of57j"]
+size = Vector2(987, 885)
+
+[node name="Node2D" type="Area2D" unique_id=402867062 groups=["player"]]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_nfl0w")
+laser_scene = ExtResource("2_b3rne")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1519188538]
+texture = SubResource("AtlasTexture_b3rne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1406196964]
+position = Vector2(6.5, 7.5)
+shape = SubResource("RectangleShape2D_of57j")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1407314526]
+position = Vector2(5, -712)

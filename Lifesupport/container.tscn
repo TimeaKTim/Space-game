@@ -7,14 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://ddjdbytuqlqbb" path="res://Lifesupport/base1.png" id="5_a8au3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2p6w"]
-size = Vector2(125, 126)
+size = Vector2(532.5, 632.5)
 
 [node name="Container" type="Area2D" unique_id=1309942741 groups=["container"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_d2p6w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=879975041]
-position = Vector2(0.5, 0)
+position = Vector2(36.249954, 36.249947)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_d2p6w")
 
 [node name="Layer1" type="Sprite2D" parent="." unique_id=526577102]

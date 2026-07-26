@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dmhyhlyncmhd3"]
+
+[ext_resource type="Script" uid="uid://d4fnqragmc238" path="res://NAVigation/asteroidshooter.gd" id="1_23jxl"]
+[ext_resource type="Texture2D" uid="uid://04lri4x2lcf1" path="res://NAVigation/Untitled 7.png" id="1_elmpo"]
+[ext_resource type="PackedScene" uid="uid://bsf36j8ma3i8b" path="res://NAVigation/asteroid.tscn" id="2_qymkv"]
+[ext_resource type="PackedScene" uid="uid://ci6uhjqsddd1a" path="res://NAVigation/player.tscn" id="4_oss3k"]
+[ext_resource type="Texture2D" uid="uid://xkq1a3gawiui" path="res://NAVigation/middle.png" id="5_lxtsu"]
+[ext_resource type="Texture2D" uid="uid://p85rd2kavq67" path="res://NAVigation/Untitled 9 (1).png" id="5_oeo4h"]
+[ext_resource type="Texture2D" uid="uid://u48v8f35outp" path="res://NAVigation/redline.png" id="6_oeo4h"]
+[ext_resource type="Texture2D" uid="uid://bnnpt5pvow7dr" path="res://NAVigation/blueline.png" id="7_isqrk"]
+
+[node name="Main" type="Node2D" unique_id=1808688974]
+script = ExtResource("1_23jxl")
+asteroid_scene = ExtResource("2_qymkv")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=755348391]
+position = Vector2(636, 257)
+scale = Vector2(0.5953704, 0.58148146)
+texture = ExtResource("1_elmpo")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1392190155]
+autostart = true
+
+[node name="Node2D" parent="." unique_id=402867062 instance=ExtResource("4_oss3k")]
+position = Vector2(654, 635)
+
+[node name="Untitled9(1)" type="Sprite2D" parent="." unique_id=1610044601]
+z_index = 1
+position = Vector2(1129.0001, 600)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("5_oeo4h")
+
+[node name="Direction indicator" type="Node2D" parent="." unique_id=1568916857]
+position = Vector2(1125, 612)
+
+[node name="Middle" type="Sprite2D" parent="Direction indicator" unique_id=238556444]
+z_index = 2
+texture = ExtResource("5_lxtsu")
+offset = Vector2(-8, -19)
+
+[node name="Redline" type="Sprite2D" parent="Direction indicator" unique_id=1811993404]
+z_index = 2
+position = Vector2(-1.1920929e-05, -6.0796738e-06)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_oeo4h")
+offset = Vector2(-13.333313, -1.6666565)
+
+[node name="Blueline" type="Sprite2D" parent="Direction indicator" unique_id=1351885592]
+z_index = 2
+position = Vector2(-1.21593475e-05, 1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_isqrk")
+offset = Vector2(-3.333313, -30)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

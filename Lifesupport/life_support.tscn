@@ -196,17 +196,17 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("50_yiqq1")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [node name="Life support" type="Node2D" unique_id=1682243815]
 script = ExtResource("1_4nei7")
 
 [node name="NewProject" type="Sprite2D" parent="." unique_id=198296508]
-position = Vector2(644, 356)
-scale = Vector2(0.6625, 0.65925926)
+position = Vector2(640, 361)
+scale = Vector2(0.6666666, 0.66851854)
 texture = ExtResource("3_rn8iu")
 
 [node name="Potion" parent="." unique_id=284708003 instance=ExtResource("2_rn8iu")]
@@ -234,6 +234,6 @@ position = Vector2(1096, 128)
 position = Vector2(616, 536)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1482224021]
-position = Vector2(656.00006, 360)
-scale = Vector2(1.739905, 1.5463576)
+position = Vector2(654.25, 330)
+scale = Vector2(1.744062, 1.4470199)
 sprite_frames = SubResource("SpriteFrames_flgdm")
