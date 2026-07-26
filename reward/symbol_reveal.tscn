@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b6xk3qaq7d0r0"]
+
+[ext_resource type="Script" uid="uid://dxgovxdekem1f" path="res://reward/symbol_reveal.gd" id="1_sym"]
+[ext_resource type="Script" uid="uid://b1nsm0id86p78" path="res://reward/starfield.gd" id="2_star"]
+[ext_resource type="Shader" uid="uid://cjwqnq8d1w6cl" path="res://reward/shaders/vignette.gdshader" id="3_vig"]
+[ext_resource type="Shader" uid="uid://cnm7uerccs2ph" path="res://reward/shaders/scanlines.gdshader" id="4_scan"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
+shader = ExtResource("3_vig")
+shader_parameter/strength = 0.55
+shader_parameter/radius = 0.85
+shader_parameter/softness = 0.55
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_scan"]
+shader = ExtResource("4_scan")
+shader_parameter/line_spacing = 3.0
+shader_parameter/opacity = 0.07
+
+[node name="SymbolReveal" type="Control" unique_id=1859011691]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sym")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1471826590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.015, 0.02, 0.035, 1)
+
+[node name="Starfield" type="Node2D" parent="." unique_id=1416305527]
+script = ExtResource("2_star")
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=925053278]
+material = SubResource("ShaderMaterial_vig")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SymbolsColumn" type="VBoxContainer" parent="." unique_id=1735535630]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -210.0
+offset_right = 260.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Symbol1" type="RichTextLabel" parent="SymbolsColumn" unique_id=66828652]
+custom_minimum_size = Vector2(520, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "?"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Symbol2" type="RichTextLabel" parent="SymbolsColumn" unique_id=1755619225]
+custom_minimum_size = Vector2(520, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "?"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Symbol3" type="RichTextLabel" parent="SymbolsColumn" unique_id=1218893543]
+custom_minimum_size = Vector2(520, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.72, 0.88, 1, 1)
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "?"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=733995930]
+material = SubResource("ShaderMaterial_scan")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FadeRect" type="ColorRect" parent="." unique_id=1380294146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
