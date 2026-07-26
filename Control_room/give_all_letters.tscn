@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blnpi345jvgpa"]
+
+[ext_resource type="Script" uid="uid://btki6swqal3ux" path="res://Control_room/give_all_letters.gd" id="1_sjxn8"]
+
+[node name="Give all letters" type="Button" unique_id=2009781818]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_sjxn8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

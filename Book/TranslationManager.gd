@@ -12,12 +12,26 @@ func _ready() -> void:
 	for letter in alphabet:
 		unlocked_letters[letter] = false
 
-# Call this function whenever the player finds a clue (e.g., TranslationManager.unlock_letter("a"))
+# Call this function whenever the player finds a clue
 func unlock_letter(letter: String) -> void:
 	var lower_letter = letter.to_lower()
 	if unlocked_letters.has(lower_letter):
 		unlocked_letters[lower_letter] = true
 		print("Unlocked alien letter: ", lower_letter)
+
+# NEW: Function to instantly unlock everything
+func unlock_all_letters() -> void:
+	for letter in unlocked_letters.keys():
+		unlocked_letters[letter] = true
+	print("Cheat activated: All alien letters unlocked!")
+
+# NEW: Connect your Button's "pressed" signal to this function
+func _on_button_pressed() -> void:
+	unlock_all_letters()
+	
+	# Optional: If your RichTextLabel doesn't update automatically, 
+	# you will need to refresh its text here or emit a signal so the UI knows to update.
+	# Example: SignalBus.emit_signal("translation_updated")
 
 # This converts normal English into a mix of English and Alien BBCode
 func get_translated_text(english_text: String) -> String:

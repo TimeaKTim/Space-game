@@ -7,8 +7,6 @@ class_name Potion
 @onready var button: Button = $Button
 @onready var area_2d: Area2D = $Area2D
 @onready var belt: Sprite2D = $Belt
-
-# NEW: Reference to the label on your Potion scene
 @onready var value_label: RichTextLabel = $ValueLabel 
 
 enum PotionState { FULL, EMPTY }
@@ -21,12 +19,18 @@ var active_container: Area2D = null
 var initial_position: Vector2 
 
 func _ready() -> void:
-	randomize() 
+	# Randomize color only in ready
+	sutyok.self_modulate = Color.from_hsv(randf(), 1.0, 1.0, 1.0)
+	initial_position = position 
 	
-	var possible_primes: Array[int] = [2, 3, 5, 7]
-	potion_value = possible_primes.pick_random()
-	
-	# NEW: Dictionary to convert the integer to an English word
+	button.button_down.connect(_on_button_down)
+	button.button_up.connect(_on_button_up)
+	area_2d.area_entered.connect(_on_area_entered)
+	area_2d.area_exited.connect(_on_area_exited)
+
+# THE NEW LOGIC: This is called by the Level Controller to assign the value
+func setup_potion(val: int) -> void:
+	potion_value = val
 	var number_to_word: Dictionary = {
 		2: "Two",
 		3: "Three",
@@ -34,26 +38,10 @@ func _ready() -> void:
 		7: "Seven"
 	}
 	
-	# Assign the text to the label and TRANSLATE it. 
 	if value_label != null:
-		# Force BBCode on
 		value_label.bbcode_enabled = true
-		
-		# Get the raw English word
 		var english_word = number_to_word[potion_value]
-		
-		# Pass it directly into the TranslationManager
 		value_label.text = TranslationManager.get_translated_text(english_word)
-	
-	# Give the liquid a beautifully random hue!
-	sutyok.self_modulate = Color.from_hsv(randf(), 1.0, 1.0, 1.0)
-	
-	initial_position = position 
-	
-	button.button_down.connect(_on_button_down)
-	button.button_up.connect(_on_button_up)
-	area_2d.area_entered.connect(_on_area_entered)
-	area_2d.area_exited.connect(_on_area_exited)
 
 func _process(_delta: float) -> void:
 	if is_held:
@@ -104,7 +92,6 @@ func set_empty() -> void:
 	cap.visible = true
 	belt.visible = true
 	
-	# NEW: Hide the text when the potion is empty!
 	if value_label != null:
 		value_label.visible = false
 		

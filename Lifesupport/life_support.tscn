@@ -52,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://cphsofjl5dv80" path="res://Lifesupport/placidplace-explosion-12681/a23fd1af-f514-4c4e-8999-8fc633155bbd-45.png" id="49_lqh6x"]
 [ext_resource type="Texture2D" uid="uid://b56ucfg0uajp6" path="res://Lifesupport/placidplace-explosion-12681/a23fd1af-f514-4c4e-8999-8fc633155bbd-46.png" id="50_yiqq1"]
 [ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="52_uu4bd"]
+[ext_resource type="PackedScene" uid="uid://blnpi345jvgpa" path="res://Control_room/give_all_letters.tscn" id="53_6i4dr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgdm"]
 animations = [{
@@ -244,3 +245,9 @@ offset_left = 6.0
 offset_top = -1.0
 offset_right = 97.0
 offset_bottom = 62.0
+
+[node name="Give all letters" parent="." unique_id=2009781818 instance=ExtResource("53_6i4dr")]
+offset_left = 24.0
+offset_top = 619.0
+offset_right = 32.0
+offset_bottom = 627.0
