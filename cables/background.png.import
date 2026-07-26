@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bia634c3cx5u5"
-path="res://.godot/imported/wire.png-aa0a0dde6e630a1263b8926fd435979a.ctex"
+uid="uid://ddy6hki72yw5i"
+path="res://.godot/imported/background.png-4e448fbd7c8184a210282c5d953c10de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cables/wire.png"
-dest_files=["res://.godot/imported/wire.png-aa0a0dde6e630a1263b8926fd435979a.ctex"]
+source_file="res://cables/background.png"
+dest_files=["res://.godot/imported/background.png-4e448fbd7c8184a210282c5d953c10de.ctex"]
 
 [params]
 

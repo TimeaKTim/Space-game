@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8hm3315garvm"]
 
 [ext_resource type="Script" uid="uid://ba6d0ltb3e8m1" path="res://cables/cables.gd" id="1_46ll2"]
-[ext_resource type="PackedScene" uid="uid://dp2jnmqq0ns75" path="res://cables/wire.tscn" id="3_cgop3"]
+[ext_resource type="Texture2D" uid="uid://ddy6hki72yw5i" path="res://cables/background.png" id="2_2u27p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46ll2"]
 size = Vector2(0, 0)
@@ -14,9 +14,9 @@ script = ExtResource("1_46ll2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=821493997]
 shape = SubResource("RectangleShape2D_46ll2")
 
-[node name="Wire" parent="." unique_id=1415871856 instance=ExtResource("3_cgop3")]
-visible = false
-top_level = true
-to = Vector2(500, 300)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2015915515]
+scale = Vector2(0.444, 0.444)
+texture = ExtResource("2_2u27p")
+centered = false
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -21,16 +21,20 @@ extends Node2D
 		to = value
 		queue_redraw()
 
-func clear():
+func init(pos: Vector2):
+	from = pos
+	to = pos
+
+func clear() -> void:
 	self.from = Vector2.ZERO
 	self.to = Vector2.ZERO
 
-func _draw():
+func _draw() -> void:
 	if texture == null or from == null or to == null:
 		return
 	
 	# segment size with texture fallback
-	var seg_size
+	var seg_size: Vector2
 	if self.segment_size == null or self.segment_size == Vector2.ZERO:
 		seg_size = texture.get_size()
 	else:
@@ -44,9 +48,9 @@ func _draw():
 		return
 	
 	var whole_segments: int = int(segments)
-	var remainder = segments - whole_segments
+	var remainder := segments - whole_segments
 	for i in range(whole_segments + 1):
-		var rect = Rect2(
+		var rect := Rect2(
 			seg_size.x * i,
 			-seg_size.y / 2,
 			seg_size.x,
@@ -58,7 +62,7 @@ func _draw():
 			draw_texture_rect(texture, rect, false)
 		else:
 			# draw remainder segment
-			var src = Rect2(Vector2.ZERO, seg_size)
+			var src := Rect2(Vector2.ZERO, seg_size)
 			src.size.x *= remainder
 			rect.size.x *= remainder
 			draw_texture_rect_region(texture, rect, src)
