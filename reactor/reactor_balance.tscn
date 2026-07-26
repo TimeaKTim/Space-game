@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cka13071hhl48" path="res://reactor/core_glow.gd" id="2_glow"]
 [ext_resource type="Texture2D" uid="uid://b1xf62b5xt1mr" path="res://reactor/art/reactor_bg.png" id="3_bg"]
 [ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="4_hc4nu"]
+[ext_resource type="AudioStream" uid="uid://lk8db88awgm2" path="res://audio/reactor.wav" id="5_j7aki"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
 bg_color = Color(0.05, 0.06, 0.08, 0.55)
@@ -182,3 +183,7 @@ offset_left = 1.0
 offset_top = -1.0
 offset_right = 92.0
 offset_bottom = 62.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=374917345]
+stream = ExtResource("5_j7aki")
+autoplay = true

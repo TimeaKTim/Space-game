@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://nc7t4djscmjh" path="res://Control_room/control_room.gd" id="1_nvqxj"]
 [ext_resource type="PackedScene" uid="uid://vdy5i4axh4u3" path="res://Control_room/Warning.tscn" id="3_g50so"]
 [ext_resource type="Script" uid="uid://dkdg04koxaatm" path="res://Control_room/label.gd" id="4_83new"]
-[ext_resource type="PackedScene" uid="uid://blnpi345jvgpa" path="res://Control_room/give_all_letters.tscn" id="5_ujf7x"]
+[ext_resource type="PackedScene" path="res://Control_room/give_all_letters.tscn" id="5_ujf7x"]
+[ext_resource type="AudioStream" uid="uid://rh7helh3vxe5" path="res://audio/ingame.wav" id="6_bqmgi"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ujf7x"]
 viewport_path = NodePath("SubViewport")
@@ -83,6 +84,10 @@ label_settings = SubResource("LabelSettings_ujf7x")
 script = ExtResource("4_83new")
 
 [node name="Give all letters" parent="." unique_id=2009781818 instance=ExtResource("5_ujf7x")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1147548190]
+stream = ExtResource("6_bqmgi")
+autoplay = true
 
 [connection signal="pressed" from="Book" to="." method="_on_book_pressed"]
 [connection signal="pressed" from="Navigation" to="." method="_on_navigation_pressed"]
