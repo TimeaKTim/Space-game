@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://41guidsymbld"]
+
+[ext_resource type="Texture2D" uid="uid://33620jnhkwym" path="res://outro/New Project.png" id="1_f743q"]
+[ext_resource type="Script" uid="uid://d1itrdrh13m52" path="res://suffocated.gd" id="1_rvodd"]
+
+[node name="Node2D" type="Node2D" unique_id=728060171]
+script = ExtResource("1_rvodd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=481452787]
+position = Vector2(639.5, 357.99997)
+scale = Vector2(0.6692708, 0.67037034)
+texture = ExtResource("1_f743q")
+
+[node name="Button" type="Button" parent="." unique_id=314427846]
+offset_left = 565.0
+offset_top = 460.0
+offset_right = 650.0
+offset_bottom = 491.0
+text = "Try Again."
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

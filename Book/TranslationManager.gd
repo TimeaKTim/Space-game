@@ -11,7 +11,11 @@ func _ready() -> void:
 	var alphabet = "abcdefghijklmnopqrstuvwxyz"
 	for letter in alphabet:
 		unlocked_letters[letter] = false
-
+# NEW: Function to lock all letters (reset the alphabet)
+func reset_alphabet() -> void:
+	for letter in unlocked_letters.keys():
+		unlocked_letters[letter] = false
+	print("Alphabet reset: All letters are locked again!")
 # Call this function whenever the player finds a clue
 func unlock_letter(letter: String) -> void:
 	var lower_letter = letter.to_lower()

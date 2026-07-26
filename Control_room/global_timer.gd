@@ -14,8 +14,13 @@ func _ready() -> void:
 	
 	# Connect the timeout signal
 	timer.timeout.connect(_on_timer_timeout)
-
+# NEW: Function to restart the global timer
+func reset_timer() -> void:
+	if timer:
+		timer.start() # Restarts the timer from the beginning (10.0 seconds)
+	print("Timer has been reset!")
 func _on_timer_timeout() -> void:
 	print("GLOBAL TIME IS UP!")
+	get_tree().change_scene_to_file("res://Suffocated.tscn")
 	# You can add logic here to jump to a "Game Over" scene!
 	# get_tree().change_scene_to_file("res://GameOver.tscn")
