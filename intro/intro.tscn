@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dvj42gsc47uuq" path="res://intro/starfield.gd" id="2_star"]
 [ext_resource type="Shader" uid="uid://bwqk5funj3e68" path="res://intro/shaders/vignette.gdshader" id="3_vig"]
 [ext_resource type="Shader" uid="uid://dsr2w5qpreukx" path="res://intro/shaders/scanlines.gdshader" id="4_scan"]
+[ext_resource type="AudioStream" uid="uid://cvjbkvu8innmq" path="res://audio/intro.wav" id="5_vyos2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
 shader = ExtResource("3_vig")
@@ -189,3 +190,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
+
+[node name="IntroMusic" type="AudioStreamPlayer2D" parent="." unique_id=227413232]
+stream = ExtResource("5_vyos2")
+autoplay = true

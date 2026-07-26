@@ -15,6 +15,14 @@ run/main_scene="uid://drepx81e1my7k"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://intro/icon.svg"
 
+[autoload]
+
+TranslationManager="*uid://c6solbiy1nns0"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [display]
 
 window/size/viewport_width=1280
