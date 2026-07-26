@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://s0sgxuxnh8cv"]
+
+[ext_resource type="Script" uid="uid://n2wohjd6lnlf" path="res://Control_room/global_timer.gd" id="1_wx1jg"]
+
+[node name="Timer" type="Timer" unique_id=1538319023]
+one_shot = true
+autostart = true
+script = ExtResource("1_wx1jg")
+timer_time = 300.0

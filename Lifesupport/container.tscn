@@ -30,3 +30,17 @@ texture = ExtResource("4_68a1c")
 [node name="base" type="Sprite2D" parent="." unique_id=1225144522]
 position = Vector2(2, -1)
 texture = ExtResource("5_a8au3")
+
+[node name="ValueLabel" type="RichTextLabel" parent="." unique_id=2145301613]
+offset_left = 332.49997
+offset_top = 57.499996
+offset_right = 372.49997
+offset_bottom = 97.5
+scale = Vector2(21.6, 6.3592505)
+theme_override_colors/default_color = Color(0.5176471, 0.20784314, 0.6117647, 1)
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+bbcode_enabled = true

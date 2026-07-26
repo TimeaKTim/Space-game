@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dage5qpswdi1k" path="res://Lifesupport/Untitled2.png" id="3_gqxm8"]
 [ext_resource type="Texture2D" uid="uid://crtuu3tntuvw1" path="res://Lifesupport/Untitled1.png" id="4_a0gnx"]
 [ext_resource type="Texture2D" uid="uid://dldajocdhidqi" path="res://Lifesupport/belt.png" id="5_gqxm8"]
+[ext_resource type="Script" uid="uid://bx3ip7kth1gxd" path="res://Lifesupport/rich_text_label_POTION.gd" id="6_a0gnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flgdm"]
 size = Vector2(558, 751)
@@ -39,3 +40,18 @@ flat = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1582666421]
 position = Vector2(19, 14.5)
 shape = SubResource("RectangleShape2D_flgdm")
+
+[node name="ValueLabel" type="RichTextLabel" parent="." unique_id=526003729]
+offset_left = -250.0
+offset_top = 420.0
+offset_right = -210.0
+offset_bottom = 460.0
+scale = Vector2(14.400002, 5.400003)
+theme_override_colors/default_color = Color(0.5294118, 0.22745098, 0.61960787, 1)
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+bbcode_enabled = true
+script = ExtResource("6_a0gnx")

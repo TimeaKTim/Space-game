@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ba6d0ltb3e8m1" path="res://cables/cables.gd" id="1_46ll2"]
 [ext_resource type="Texture2D" uid="uid://ddy6hki72yw5i" path="res://cables/background.png" id="2_2u27p"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="3_cgop3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_46ll2"]
 size = Vector2(0, 0)
@@ -18,5 +19,11 @@ shape = SubResource("RectangleShape2D_46ll2")
 scale = Vector2(0.444, 0.444)
 texture = ExtResource("2_2u27p")
 centered = false
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("3_cgop3")]
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 93.0
+offset_bottom = 67.0
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -18,6 +18,7 @@ config/icon="res://intro/icon.svg"
 [autoload]
 
 TranslationManager="*uid://c6solbiy1nns0"
+GlobalTimer="*uid://n2wohjd6lnlf"
 
 [debug]
 

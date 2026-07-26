@@ -8,6 +8,9 @@ class_name Potion
 @onready var area_2d: Area2D = $Area2D
 @onready var belt: Sprite2D = $Belt
 
+# NEW: Reference to the label on your Potion scene
+@onready var value_label: RichTextLabel = $ValueLabel 
+
 enum PotionState { FULL, EMPTY }
 var current_state: PotionState = PotionState.FULL
 
@@ -19,7 +22,28 @@ var initial_position: Vector2
 
 func _ready() -> void:
 	randomize() 
-	potion_value = randi_range(1, 15)
+	
+	var possible_primes: Array[int] = [2, 3, 5, 7]
+	potion_value = possible_primes.pick_random()
+	
+	# NEW: Dictionary to convert the integer to an English word
+	var number_to_word: Dictionary = {
+		2: "Two",
+		3: "Three",
+		5: "Five",
+		7: "Seven"
+	}
+	
+	# Assign the text to the label and TRANSLATE it. 
+	if value_label != null:
+		# Force BBCode on
+		value_label.bbcode_enabled = true
+		
+		# Get the raw English word
+		var english_word = number_to_word[potion_value]
+		
+		# Pass it directly into the TranslationManager
+		value_label.text = TranslationManager.get_translated_text(english_word)
 	
 	# Give the liquid a beautifully random hue!
 	sutyok.self_modulate = Color.from_hsv(randf(), 1.0, 1.0, 1.0)
@@ -40,7 +64,8 @@ func _on_button_down() -> void:
 		is_held = true
 		z_index = 10 
 		cap.visible = false
-		belt.visible=false
+		belt.visible = false
+
 func _on_button_up() -> void:
 	is_held = false
 	z_index = 0 
@@ -66,10 +91,7 @@ func tilt_potion(target_degrees: float) -> void:
 
 func pour_into_container() -> void:
 	if active_container.has_method("add_potion_code"):
-		
-		# THE NEW LINE: Pass the potion's value AND its color to the container!
 		active_container.add_potion_code(potion_value, sutyok.self_modulate)
-		
 		position = initial_position
 		set_empty()
 	else:
@@ -78,16 +100,18 @@ func pour_into_container() -> void:
 func set_empty() -> void:
 	current_state = PotionState.EMPTY
 	self.rotation = 0.0
-	
-	# Hide the liquid completely!
 	sutyok.visible = false
-	
 	cap.visible = true
-	belt.visible=true
+	belt.visible = true
+	
+	# NEW: Hide the text when the potion is empty!
+	if value_label != null:
+		value_label.visible = false
+		
 	button.disabled = true
 
 func return_to_start() -> void:
 	var tween = create_tween()
 	tween.tween_property(self, "position", initial_position, 0.2)
 	cap.visible = true
-	belt.visible=true
+	belt.visible = true
