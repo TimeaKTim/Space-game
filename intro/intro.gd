@@ -235,4 +235,4 @@ func start_game() -> void:
 	tween.tween_property(fade, "modulate:a", 1.0, 0.7)
 	await tween.finished
 
-	# get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://Control_room/control_room.tscn")

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b1nsm0id86p78" path="res://reward/starfield.gd" id="2_star"]
 [ext_resource type="Shader" uid="uid://cjwqnq8d1w6cl" path="res://reward/shaders/vignette.gdshader" id="3_vig"]
 [ext_resource type="Shader" uid="uid://cnm7uerccs2ph" path="res://reward/shaders/scanlines.gdshader" id="4_scan"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="5_uuegw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
 shader = ExtResource("3_vig")
@@ -118,3 +119,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("5_uuegw")]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 87.0
+offset_bottom = 55.0
+metadata/_edit_use_anchors_ = true
