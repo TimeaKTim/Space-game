@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://drepx81e1my7k"]
+[gd_scene format=3 uid="uid://fgg7sp0k2fxr"]
 
-[ext_resource type="Script" uid="uid://huao1jg8lxh4" path="res://intro/intro.gd" id="1_s2ta7"]
-[ext_resource type="Script" uid="uid://dvj42gsc47uuq" path="res://intro/starfield.gd" id="2_star"]
-[ext_resource type="Shader" uid="uid://bwqk5funj3e68" path="res://intro/shaders/vignette.gdshader" id="3_vig"]
-[ext_resource type="Shader" uid="uid://dsr2w5qpreukx" path="res://intro/shaders/scanlines.gdshader" id="4_scan"]
-[ext_resource type="AudioStream" uid="uid://cvjbkvu8innmq" path="res://audio/intro.wav" id="5_vyos2"]
+[ext_resource type="Script" uid="uid://di2klrdwnlr0o" path="res://outro/outro.gd" id="1_outro"]
+[ext_resource type="Script" uid="uid://c65fmsf0n7aro" path="res://outro/starfield.gd" id="2_star"]
+[ext_resource type="Shader" uid="uid://bj7vlm5sd7xdx" path="res://outro/shaders/vignette.gdshader" id="3_vig"]
+[ext_resource type="Shader" uid="uid://dmr4teuyy6e1l" path="res://outro/shaders/scanlines.gdshader" id="4_scan"]
+[ext_resource type="AudioStream" uid="uid://cog45tlqwbox8" path="res://audio/outro.wav" id="5_7strh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vig"]
 shader = ExtResource("3_vig")
@@ -17,16 +17,16 @@ shader = ExtResource("4_scan")
 shader_parameter/line_spacing = 3.0
 shader_parameter/opacity = 0.07
 
-[node name="Intro" type="Control" unique_id=1424655253]
+[node name="Outro" type="Control" unique_id=1495046665]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_s2ta7")
+script = ExtResource("1_outro")
 
-[node name="Background" type="ColorRect" parent="." unique_id=974861996]
+[node name="Background" type="ColorRect" parent="." unique_id=1685055936]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,10 +35,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.015, 0.02, 0.035, 1)
 
-[node name="Starfield" type="Node2D" parent="." unique_id=974861997]
+[node name="Starfield" type="Node2D" parent="." unique_id=1495427188]
 script = ExtResource("2_star")
 
-[node name="Vignette" type="ColorRect" parent="." unique_id=974861998]
+[node name="Vignette" type="ColorRect" parent="." unique_id=2059989934]
 material = SubResource("ShaderMaterial_vig")
 layout_mode = 1
 anchors_preset = 15
@@ -48,7 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="." unique_id=1655970141]
+[node name="Title" type="Label" parent="." unique_id=1002563384]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -66,10 +66,10 @@ theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 38
-text = "SALVAGE CONTRACT 2638"
+text = "SIGNAL DECODED"
 horizontal_alignment = 1
 
-[node name="Divider" type="ColorRect" parent="." unique_id=974861999]
+[node name="Divider" type="ColorRect" parent="." unique_id=1693340701]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -82,7 +82,7 @@ grow_horizontal = 2
 mouse_filter = 2
 color = Color(0.55, 0.75, 1, 0.35)
 
-[node name="Story" type="RichTextLabel" parent="." unique_id=1429762311]
+[node name="Story" type="RichTextLabel" parent="." unique_id=1337712772]
 clip_contents = false
 layout_mode = 1
 anchors_preset = 15
@@ -98,28 +98,11 @@ theme_override_colors/default_color = Color(0.85, 0.9, 0.95, 1)
 theme_override_constants/line_separation = 6
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "For decades, abandoned alien vessels have
-drifted through explored space.
-
-No one knows who built them.
-No one knows why they were abandoned.
-
-Entire industries now exist to recover their technology.
-
-You are not a soldier.
-You are a salvager.
-
-Your assignment is simple:
-• Board the vessel.
-• Recover what you can.
-• Leave.
-
-Failure is acceptable.
-Loss of recovered technology is not."
+text = "The frequencies align."
 fit_content = true
 scroll_active = false
 
-[node name="PageDots" type="HBoxContainer" parent="." unique_id=974862000]
+[node name="PageDots" type="HBoxContainer" parent="." unique_id=1882325713]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -135,7 +118,7 @@ grow_vertical = 0
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="ContinueLabel" type="Label" parent="." unique_id=859281120]
+[node name="ContinueLabel" type="Label" parent="." unique_id=46124381]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -152,7 +135,7 @@ theme_override_font_sizes/font_size = 12
 text = "Press SPACE to continue"
 horizontal_alignment = 1
 
-[node name="SkipLabel" type="Label" parent="." unique_id=974862001]
+[node name="SkipLabel" type="Label" parent="." unique_id=1891343586]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -167,10 +150,10 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.6, 0.68, 0.78, 0.6)
 theme_override_font_sizes/font_size = 11
-text = "ESC — skip intro"
+text = "ESC — skip"
 horizontal_alignment = 2
 
-[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=974862002]
+[node name="ScanlineOverlay" type="ColorRect" parent="." unique_id=613862653]
 material = SubResource("ShaderMaterial_scan")
 layout_mode = 1
 anchors_preset = 15
@@ -180,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="FadeRect" type="ColorRect" parent="." unique_id=144450602]
+[node name="FadeRect" type="ColorRect" parent="." unique_id=832812070]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -191,6 +174,6 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1.6530219e-05, 1.6530223e-05, 1.6530223e-05, 1)
 
-[node name="IntroMusic" type="AudioStreamPlayer2D" parent="." unique_id=227413232]
-stream = ExtResource("5_vyos2")
+[node name="OutroMusic" type="AudioStreamPlayer2D" parent="." unique_id=42849078]
+stream = ExtResource("5_7strh")
 autoplay = true
