@@ -4,8 +4,8 @@ const zap_scene: PackedScene = preload("res://cables/zap.tscn")
 const plug_scene: PackedScene = preload("res://cables/plug.tscn")
 const wire_scene: PackedScene = preload("res://cables/wire.tscn")
 
-@onready var zap_sound = $ZapSound
-@onready var objective_text = $ObjectiveText
+@onready var zap_sound: AudioStreamPlayer = $ZapSound
+@onready var objective_text: RichTextLabel = $ObjectiveText
 
 const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
 
@@ -31,20 +31,34 @@ func randomize_objective() -> void:
 		"nine",
 	]
 	
-	var ord_from = [1,2,3,4,5,6,7,8,9]
-	ord_from.shuffle()
+	var ord_f := [1,2,3,4,5,6,7,8,9]
+	ord_f.shuffle()
 	
-	var ord_to = [1,2,3,4,5,6,7,8,9]
-	ord_to.shuffle()
+	var ord_t := [1,2,3,4,5,6,7,8,9]
+	ord_t.shuffle()
 	
-	for idx in range(9):
-		var obj_from = randi_range(0, 20)
-		var obj_to = randi_range(21, 38)
-		objective[obj_from] = obj_to
-		plugs[obj_from].text = str(ord_from[idx])
-		plugs[obj_to].text = str(ord_to[idx])
-		objective_text.text += TranslationManager.get_translated_text("%s to %s" % [labels[ord_from[idx]-1], labels[ord_to[idx]-1]])
-		objective_text.text += "\n"
+	var obj_from := [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+	obj_from.shuffle()
+	
+	var obj_to := [21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]
+	obj_to.shuffle()
+	
+	for idx in range(5):
+		var ord_from = ord_f[idx]
+		var ord_to = ord_t[idx]
+		
+		# indexes
+		objective[obj_from[idx]] = obj_to[idx]
+		plugs[obj_from[idx]].text = str(ord_from)
+		plugs[obj_to[idx]].text = str(ord_to)
+		
+		# labels
+		var label_from = labels[ord_from - 1]
+		var label_to = labels[ord_to - 1]
+		
+		# text
+		print("%s to %s" % [label_from, label_to])
+		objective_text.text += TranslationManager.get_translated_text("%s to %s" % [label_from, label_to]) + "\n"
 
 func start_selection(idx: int) -> void:
 	wires[idx].init(plugs[idx].position)
@@ -118,11 +132,11 @@ func _process(_delta: float) -> void:
 	
 	# get the wire closests to the cursor
 	var closest_idx := -1
-	var closest_dist := 999999
+	var closest_dist := 999999.
 	for idx in range(len(wires)):
-		var wire = wires[idx]
+		var wire := wires[idx]
 		if wire.from != wire.to:
-			var dst = Geometry2D.get_closest_point_to_segment(mouse_pos, wire.from, wire.to).distance_to(mouse_pos)
+			var dst := Geometry2D.get_closest_point_to_segment(mouse_pos, wire.from, wire.to).distance_to(mouse_pos)
 			if dst < closest_dist:
 				closest_idx = idx
 				closest_dist = dst
