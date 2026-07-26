@@ -9,6 +9,7 @@ extends Node2D
 @onready var potion_6: Potion = $Potion6
 @onready var container: Area2D = $Container
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
 const WIN_TRANSITION_DELAY := 1.4
@@ -53,6 +54,6 @@ func _on_combo_success() -> void:
 func _on_combo_failure() -> void:
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play() 
-
+	audio_stream_player_2d.play()
 func _on_explosion_finished() -> void:
 	get_tree().change_scene_to_file("res://Control_room/control_room.tscn")

@@ -8,6 +8,7 @@ class_name Potion
 @onready var area_2d: Area2D = $Area2D
 @onready var belt: Sprite2D = $Belt
 @onready var value_label: RichTextLabel = $ValueLabel 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 enum PotionState { FULL, EMPTY }
 var current_state: PotionState = PotionState.FULL
@@ -82,6 +83,7 @@ func pour_into_container() -> void:
 		active_container.add_potion_code(potion_value, sutyok.self_modulate)
 		position = initial_position
 		set_empty()
+		audio_stream_player_2d.play()
 	else:
 		print("DEBUG: Container found, but add_potion_code method is missing!")
 

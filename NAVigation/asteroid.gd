@@ -4,6 +4,8 @@ signal shot_down
 
 @export var speed: float = 250.0
 @export var explosion_scene: PackedScene 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 
 func _process(delta: float) -> void:
 	position.y += speed * delta
@@ -15,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	# Checking for both lowercase and uppercase just in case!
 	if area.is_in_group("player") or area.is_in_group("Player"):
+		audio_stream_player_2d.play()
 		area.queue_free() 
 		explode()         
 		print("Game Over!")

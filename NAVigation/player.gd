@@ -1,4 +1,5 @@
 extends Area2D
+@onready var lasersound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var laser_scene: PackedScene
 var screen_size: Vector2
@@ -22,4 +23,5 @@ func shoot() -> void:
 		# Spawn the laser at the Muzzle Marker2D's position
 		laser.global_position = $Muzzle.global_position
 		# Add the laser to the main scene tree
+		lasersound.play()
 		get_tree().root.add_child(laser)

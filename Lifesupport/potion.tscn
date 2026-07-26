@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crtuu3tntuvw1" path="res://Lifesupport/Untitled1.png" id="4_a0gnx"]
 [ext_resource type="Texture2D" uid="uid://dldajocdhidqi" path="res://Lifesupport/belt.png" id="5_gqxm8"]
 [ext_resource type="Script" uid="uid://bx3ip7kth1gxd" path="res://Lifesupport/rich_text_label_POTION.gd" id="6_a0gnx"]
+[ext_resource type="AudioStream" uid="uid://evsrifsiuqls" path="res://audio/potion.wav" id="7_10bfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flgdm"]
 size = Vector2(558, 751)
@@ -57,3 +58,6 @@ text = "asdada"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("6_a0gnx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1115298655]
+stream = ExtResource("7_10bfq")

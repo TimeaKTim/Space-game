@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjfvucqhpvvod" path="res://NAVigation/asteroid.gd" id="1_8pdwb"]
 [ext_resource type="Texture2D" uid="uid://b1rj84331aujw" path="res://NAVigation/Untitled 9.png" id="1_yqarj"]
 [ext_resource type="PackedScene" uid="uid://cf7ug2j8oh5ws" path="res://NAVigation/Explosion.tscn" id="2_fj7dr"]
+[ext_resource type="AudioStream" uid="uid://yp7y1wqvlaem" path="res://audio/SHipexplosion.mp3" id="4_rlpdh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8pdwb"]
 radius = 181.70581
@@ -24,5 +25,8 @@ shape = SubResource("CircleShape2D_8pdwb")
 texture = SubResource("AtlasTexture_fj7dr")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1806691320]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1833813175]
+stream = ExtResource("4_rlpdh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

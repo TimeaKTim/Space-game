@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqrdlujtthxvy" path="res://NAVigation/player.gd" id="1_nfl0w"]
 [ext_resource type="PackedScene" uid="uid://b8lkfgue685bv" path="res://NAVigation/laser.tscn" id="2_b3rne"]
 [ext_resource type="Texture2D" uid="uid://b1rj84331aujw" path="res://NAVigation/Untitled 9.png" id="2_qbx2q"]
+[ext_resource type="AudioStream" uid="uid://c3kllbsc5qih" path="res://audio/Laser.wav" id="4_b3rne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b3rne"]
 atlas = ExtResource("2_qbx2q")
@@ -25,3 +26,7 @@ shape = SubResource("RectangleShape2D_of57j")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1407314526]
 position = Vector2(5, -712)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=664272592]
+stream = ExtResource("4_b3rne")
+volume_db = 24.0
