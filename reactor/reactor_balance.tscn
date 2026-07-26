@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cwoalt08hu31e" path="res://reactor/reactor_balance.gd" id="1_main"]
 [ext_resource type="Script" uid="uid://cka13071hhl48" path="res://reactor/core_glow.gd" id="2_glow"]
 [ext_resource type="Texture2D" uid="uid://b1xf62b5xt1mr" path="res://reactor/art/reactor_bg.png" id="3_bg"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="4_hc4nu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hud"]
 bg_color = Color(0.05, 0.06, 0.08, 0.55)
@@ -174,3 +175,10 @@ theme_override_font_sizes/font_size = 11
 text = "FUEL"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("4_hc4nu")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 92.0
+offset_bottom = 62.0

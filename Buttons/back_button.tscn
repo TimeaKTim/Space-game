@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c6g5e8tsqvh1u"]
+
+[ext_resource type="Texture2D" uid="uid://7jeiydq2r5cy" path="res://Buttons/backbutton.png" id="1_c2qng"]
+[ext_resource type="Script" uid="uid://bgmvyk2hjnbc4" path="res://Buttons/back_button.gd" id="2_kxmdl"]
+
+[node name="Back button" type="TextureButton" unique_id=501703621]
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("1_c2qng")
+texture_pressed = ExtResource("1_c2qng")
+texture_hover = ExtResource("1_c2qng")
+texture_disabled = ExtResource("1_c2qng")
+texture_focused = ExtResource("1_c2qng")
+script = ExtResource("2_kxmdl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

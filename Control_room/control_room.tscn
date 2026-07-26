@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://deijd1csyigwt"]
+
+[ext_resource type="Texture2D" uid="uid://cftwdkpd6memf" path="res://Control_room/sketch1784986404293.png" id="1_2p5dq"]
+[ext_resource type="Script" uid="uid://nc7t4djscmjh" path="res://Control_room/control_room.gd" id="1_nvqxj"]
+[ext_resource type="PackedScene" uid="uid://vdy5i4axh4u3" path="res://Control_room/Warning.tscn" id="3_g50so"]
+[ext_resource type="Script" uid="uid://dkdg04koxaatm" path="res://Control_room/label.gd" id="4_83new"]
+[ext_resource type="Script" uid="uid://n2wohjd6lnlf" path="res://Control_room/timer.gd" id="5_ujf7x"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ujf7x"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ujf7x"]
+font_size = 190
+font_color = Color(0.8039216, 0.9019608, 0.9098039, 1)
+
+[node name="Control Room" type="Node2D" unique_id=1569534675]
+script = ExtResource("1_nvqxj")
+
+[node name="Control Room panel" type="Sprite2D" parent="." unique_id=480856611]
+position = Vector2(638.75, 359.875)
+scale = Vector2(0.6690104, 0.7302831)
+texture = ExtResource("1_2p5dq")
+
+[node name="Book" type="Button" parent="." unique_id=889112960]
+offset_left = 108.00001
+offset_top = 403.0
+offset_right = 261.0
+offset_bottom = 535.0
+scale = Vector2(0.94788814, 0.9506809)
+flat = true
+
+[node name="Navigation" parent="." unique_id=2042363726 instance=ExtResource("3_g50so")]
+offset_left = 588.0
+offset_top = 581.0
+offset_right = 679.0
+offset_bottom = 644.0
+Scene = "res://NAVigation/asteroidshooter.tscn"
+
+[node name="HealthSupport" parent="." unique_id=1367506042 instance=ExtResource("3_g50so")]
+offset_left = 817.0
+offset_top = 475.0
+offset_right = 908.0
+offset_bottom = 538.0
+Scene = "res://Lifesupport/life_support.tscn"
+
+[node name="Cables" parent="." unique_id=1258937795 instance=ExtResource("3_g50so")]
+offset_left = 269.0
+offset_top = 581.0
+offset_right = 360.0
+offset_bottom = 644.0
+Scene = "res://cables/cables.tscn"
+
+[node name="Reactor" parent="." unique_id=1084329114 instance=ExtResource("3_g50so")]
+offset_left = 354.0
+offset_top = 457.0
+offset_right = 445.0
+offset_bottom = 520.0
+Scene = "res://reactor/reactor_balance.tscn"
+
+[node name="Communication" parent="." unique_id=1463258169 instance=ExtResource("3_g50so")]
+offset_left = 975.0
+offset_top = 331.0
+offset_right = 1066.0
+offset_bottom = 394.0
+Scene = "res://comms/frequency_match.tscn"
+
+[node name="Timer" type="Timer" parent="." unique_id=1927679841]
+one_shot = true
+autostart = true
+script = ExtResource("5_ujf7x")
+timer_time = 300.0
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1652513018]
+position = Vector2(1079, 520)
+rotation = 0.26225656
+texture = SubResource("ViewportTexture_ujf7x")
+polygon = PackedVector2Array(-3.5584717, -9.398804, 138.77722, 15.552277, 141.47253, 87.30698, -0.25354004, 41.48419)
+uv = PackedVector2Array(0, 0, 512, 0, 511.8016, 511.81796, 0.69314575, 512.32935)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2066552147]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=1106664540 node_paths=PackedStringArray("timer")]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 11.0
+offset_bottom = 73.0
+label_settings = SubResource("LabelSettings_ujf7x")
+script = ExtResource("4_83new")
+timer = NodePath("../../Timer")
+
+[connection signal="pressed" from="Book" to="." method="_on_book_pressed"]
+[connection signal="pressed" from="Navigation" to="." method="_on_navigation_pressed"]
+[connection signal="pressed" from="HealthSupport" to="." method="_on_health_support_pressed"]
+[connection signal="pressed" from="Cables" to="." method="_on_cables_pressed"]
+[connection signal="pressed" from="Reactor" to="." method="_on_reactor_pressed"]
+[connection signal="pressed" from="Communication" to="." method="_on_communication_pressed"]

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ohxf8g2eq7fo" path="res://comms/wave_display.gd" id="3_wave"]
 [ext_resource type="Script" uid="uid://b43hpg326p7rd" path="res://comms/status_dot.gd" id="4_dot"]
 [ext_resource type="Texture2D" uid="uid://dbnk5amabtemd" path="res://comms/background.png" id="5_bg"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="6_6y014"]
 
 [node name="FrequencyMatch" type="Control" unique_id=2040233013]
 layout_mode = 3
@@ -160,3 +161,10 @@ offset_right = 1143.0
 offset_bottom = 664.0
 mouse_filter = 2
 script = ExtResource("4_dot")
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("6_6y014")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 94.0
+offset_bottom = 62.0

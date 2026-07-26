@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://p85rd2kavq67" path="res://NAVigation/Untitled 9 (1).png" id="5_oeo4h"]
 [ext_resource type="Texture2D" uid="uid://u48v8f35outp" path="res://NAVigation/redline.png" id="6_oeo4h"]
 [ext_resource type="Texture2D" uid="uid://bnnpt5pvow7dr" path="res://NAVigation/blueline.png" id="7_isqrk"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="9_isqrk"]
 
 [node name="Main" type="Node2D" unique_id=1808688974]
 script = ExtResource("1_23jxl")
@@ -29,6 +30,13 @@ z_index = 1
 position = Vector2(1129.0001, 600)
 scale = Vector2(0.63, 0.63)
 texture = ExtResource("5_oeo4h")
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("9_isqrk")]
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 87.0
+offset_bottom = 55.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Direction indicator" type="Node2D" parent="." unique_id=1568916857]
 position = Vector2(1125, 612)

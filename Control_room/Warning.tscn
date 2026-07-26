@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://vdy5i4axh4u3"]
+
+[ext_resource type="Texture2D" uid="uid://ckke7mx54yrwh" path="res://Buttons/sketch1784986404293 (1).png" id="1_8ua0i"]
+[ext_resource type="Script" uid="uid://b647f5mqejydw" path="res://texture_button.gd" id="2_hpmei"]
+
+[node name="TextureButton" type="TextureButton" unique_id=2042363726]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_8ua0i")
+texture_pressed = ExtResource("1_8ua0i")
+texture_hover = ExtResource("1_8ua0i")
+texture_disabled = ExtResource("1_8ua0i")
+texture_focused = ExtResource("1_8ua0i")
+script = ExtResource("2_hpmei")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cxqfo26r43br7" path="res://Book/book.png" id="1_cuk7m"]
 [ext_resource type="Script" uid="uid://8qysp5bpyxc5" path="res://Book/rich_text_label.gd" id="2_asd57"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="3_nh3kg"]
 
 [node name="Node2D" type="Node2D" unique_id=1060913744]
 
@@ -35,3 +36,9 @@ text = "Helllo World "
 fit_content = true
 script = ExtResource("2_asd57")
 secret_message = "We thought our understanding of life was absolute. Our vessels, marvels of engineering woven with living biological components, allowed us to navigate the stars with unparalleled grace. But the cosmos harbors horrors we could never have anticipated."
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("3_nh3kg")]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 67.0

@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://bqx1lwxl1xugh" path="res://Lifesupport/placidplace-explosion-12681/a23fd1af-f514-4c4e-8999-8fc633155bbd-44.png" id="48_g2kh3"]
 [ext_resource type="Texture2D" uid="uid://cphsofjl5dv80" path="res://Lifesupport/placidplace-explosion-12681/a23fd1af-f514-4c4e-8999-8fc633155bbd-45.png" id="49_lqh6x"]
 [ext_resource type="Texture2D" uid="uid://b56ucfg0uajp6" path="res://Lifesupport/placidplace-explosion-12681/a23fd1af-f514-4c4e-8999-8fc633155bbd-46.png" id="50_yiqq1"]
+[ext_resource type="PackedScene" uid="uid://c6g5e8tsqvh1u" path="res://Buttons/back_button.tscn" id="52_uu4bd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_flgdm"]
 animations = [{
@@ -237,3 +238,9 @@ position = Vector2(616, 536)
 position = Vector2(654.25, 330)
 scale = Vector2(1.744062, 1.4470199)
 sprite_frames = SubResource("SpriteFrames_flgdm")
+
+[node name="Back button" parent="." unique_id=501703621 instance=ExtResource("52_uu4bd")]
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 62.0
