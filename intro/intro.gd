@@ -69,7 +69,7 @@ var dot_nodes: Array[ColorRect] = []
 func _ready() -> void:
 	story.bbcode_enabled = true
 	story.visible_characters = 0
-
+	GlobalTimer.timer.stop()
 	_build_page_dots()
 
 	story.text = pages[0]
@@ -234,5 +234,7 @@ func start_game() -> void:
 	var tween := create_tween()
 	tween.tween_property(fade, "modulate:a", 1.0, 0.7)
 	await tween.finished
-
+	
+	GlobalTimer.reset_timer()
+	GlobalTimer.timer.start()
 	get_tree().change_scene_to_file("res://Control_room/control_room.tscn")
