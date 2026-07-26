@@ -4,6 +4,11 @@ const zap_scene: PackedScene = preload("res://cables/zap.tscn")
 const plug_scene: PackedScene = preload("res://cables/plug.tscn")
 const wire_scene: PackedScene = preload("res://cables/wire.tscn")
 
+@onready var zap_sound = $ZapSound
+@onready var objective_text = $ObjectiveText
+
+const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+
 var plugs: Array[Plug] = []
 var wires: Array[Wire] = []
 var from: int = -1
@@ -12,6 +17,34 @@ var mouse: int = -1
 
 var objective: Dictionary[int, int] = {}
 var connections: Dictionary[int, int] = {}
+
+func randomize_objective() -> void:
+	const labels = [
+		"one",
+		"two",
+		"three",
+		"four",
+		"five",
+		"six",
+		"seven",
+		"eight",
+		"nine",
+	]
+	
+	var ord_from = [1,2,3,4,5,6,7,8,9]
+	ord_from.shuffle()
+	
+	var ord_to = [1,2,3,4,5,6,7,8,9]
+	ord_to.shuffle()
+	
+	for idx in range(9):
+		var obj_from = randi_range(0, 20)
+		var obj_to = randi_range(21, 38)
+		objective[obj_from] = obj_to
+		plugs[obj_from].text = str(ord_from[idx])
+		plugs[obj_to].text = str(ord_to[idx])
+		objective_text.text += TranslationManager.get_translated_text("%s to %s" % [labels[ord_from[idx]-1], labels[ord_to[idx]-1]])
+		objective_text.text += "\n"
 
 func start_selection(idx: int) -> void:
 	wires[idx].init(plugs[idx].position)
@@ -24,13 +57,21 @@ func end_selection() -> void:
 	
 	if to == -1:
 		wires[from].clear()
-	
-	if from not in objective or objective[from] != to:
+	elif from not in objective or objective[from] != to:
+		if from in objective: print("wires: trying %s -> %s (correct %s)" % [from, to, objective[from]])
+		else: print("wires: trying %s -> %s" % [from, to])
+		
 		wires[from].clear()
 		var zap_effect: Zap = zap_scene.instantiate()
 		zap_effect.emitting = true
 		zap_effect.position = plugs[to].position
 		add_child(zap_effect)
+		zap_sound.play()
+	else:
+		connections[from] = to
+		if len(connections) == len(objective):
+			# go to main page
+			get_tree().change_scene_to_file(NEXT_SCENE_PATH)
 	
 	from = -1
 	to = -1
@@ -46,6 +87,9 @@ func _ready() -> void:
 		var new_wire: Wire = wire_scene.instantiate()
 		self.wires.append(new_wire)
 		add_child(new_wire)
+	
+	# randomize objective
+	randomize_objective()
 
 func _process(_delta: float) -> void:
 	var mouse_pos := get_local_mouse_position()

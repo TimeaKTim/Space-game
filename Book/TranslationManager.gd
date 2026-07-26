@@ -53,3 +53,7 @@ func get_translated_text(english_text: String) -> String:
 			final_bbcode += char 
 			
 	return final_bbcode
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F2:
+		unlock_all_letters()

@@ -7,8 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://bjabph6ncnjwo" path="res://cables/assets/outlet_high.tres" id="5_vcnte"]
 
 [node name="Plug" type="Sprite2D" unique_id=1452337130]
+texture = ExtResource("4_gb1f1")
 script = ExtResource("1_27j0f")
 texture_outlet = ExtResource("3_i8ppf")
 texture_outlet_highlighted = ExtResource("5_vcnte")
 texture_inlet = ExtResource("4_gb1f1")
 texture_inlet_highlighted = ExtResource("3_gb1f1")
+
+[node name="Label" type="Label" parent="." unique_id=182970261]
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+vertical_alignment = 1
