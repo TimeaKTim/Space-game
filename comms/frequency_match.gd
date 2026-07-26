@@ -55,7 +55,7 @@ func _ready() -> void:
 
 func _setup_audio() -> void:
 	static_player.stream = load("res://comms/audio/static.mp3")
-	signal_player.stream = load("res://comms/audio/signal.mp3")
+	signal_player.stream = load("res://comms/audio/signal.wav")
 
 	static_player.finished.connect(func(): static_player.play())
 	signal_player.finished.connect(func(): signal_player.play())
