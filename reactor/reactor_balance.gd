@@ -36,6 +36,9 @@ const COLOR_COOLANT_HELD := Color(0.4, 0.85, 1.0, 0.4)
 const COLOR_FUEL_IDLE := Color(0.95, 0.6, 0.25, 0.12)
 const COLOR_FUEL_HELD := Color(0.95, 0.6, 0.25, 0.4)
 
+const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+const WIN_TRANSITION_DELAY := 1.4
+
 enum State { PLAYING, WON, LOST }
 
 var value := 50.0
@@ -154,6 +157,10 @@ func _end_run(won: bool, message: String) -> void:
 	needle.color = color
 	core_glow.set_state(color)
 
+	if won:
+		await get_tree().create_timer(WIN_TRANSITION_DELAY).timeout
+		get_tree().change_scene_to_file(NEXT_SCENE_PATH)
+
 
 func _on_coolant_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -170,7 +177,7 @@ func _input(event: InputEvent) -> void:
 		holding_coolant = false
 		holding_fuel = false
 
-	if state == State.PLAYING:
+	if state != State.LOST:
 		return
 	if event.is_action_pressed("ui_accept"):
 		_reset_run()

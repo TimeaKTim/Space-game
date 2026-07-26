@@ -10,6 +10,9 @@ extends Node2D
 @onready var container: Area2D = $Container
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+const WIN_TRANSITION_DELAY := 1.4
+
 func _ready() -> void:
 	# 1. Hide the explosion at the start of the game
 	animated_sprite_2d.visible = false 
@@ -24,7 +27,9 @@ func _ready() -> void:
 
 func _on_combo_success() -> void:
 	# If successful, quit the game instantly
-	get_tree().quit()
+	#get_tree().quit()
+	await get_tree().create_timer(WIN_TRANSITION_DELAY).timeout
+	get_tree().change_scene_to_file(NEXT_SCENE_PATH)
 
 
 func _on_combo_failure() -> void:

@@ -36,6 +36,9 @@ var finished_game := false
 
 signal signal_locked
 
+const NEXT_SCENE_PATH := "res://reward/symbol_reveal.tscn"
+const WIN_TRANSITION_DELAY := 3.4
+
 
 func _ready() -> void:
 	slider_a.value_changed.connect(_on_any_value_changed)
@@ -136,6 +139,8 @@ func _update_audio(value_a: float, value_b: float) -> void:
 	
 	if signal_linear > 0.3:
 		finished_game = true
+		await get_tree().create_timer(WIN_TRANSITION_DELAY).timeout
+		get_tree().change_scene_to_file(NEXT_SCENE_PATH)
 
 	signal_player.volume_db = linear_to_db(signal_linear)
 	static_player.volume_db = linear_to_db(static_linear)
